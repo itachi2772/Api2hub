@@ -1,3 +1,8 @@
+// 🔥 Force Node.js Runtime (MOST IMPORTANT)
+export const config = {
+  runtime: "nodejs20.x"
+};
+
 import http from "http";
 import https from "https";
 import zlib from "zlib";
@@ -26,9 +31,10 @@ export default async function handler(req, res) {
       "http://139.99.63.204/ints/client/res/data_smscdr.php";
   } else {
     res.statusCode = 400;
-    return res.end(JSON.stringify({ error: "Invalid type" }));
+    return res.end(JSON.stringify({ error: "Invalid type (use sms or numbers)" }));
   }
 
+  // 🔥 Proxy (Because direct HTTP block ho raha hai)
   const proxyURL =
     "https://api.allorigins.win/raw?url=" + encodeURIComponent(targetURL);
 
