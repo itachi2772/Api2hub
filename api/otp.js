@@ -58,16 +58,14 @@ export default async function handler(req, res) {
   let url;
 
   if (type === "numbers") {
-    url =
-      "http://139.99.63.204/ints/client/res/data_smsnumbers.php";
+    url = "http://139.99.63.204/ints/client/res/data_smsnumbers.php";
     headers.Referer = "http://139.99.63.204/ints/client/MySMSNumbers";
   } else if (type === "sms") {
-    url =
-      "http://139.99.63.204/ints/client/res/data_smscdr.php";
+    url = "http://139.99.63.204/ints/client/res/data_smscdr.php";
     headers.Referer = "http://139.99.63.204/ints/client/SMSCDRStats";
   } else {
     res.statusCode = 400;
-    return res.end(JSON.stringify({ error: "Invalid type (use sms or numbers)" }));
+    return res.end(JSON.stringify({ error: "Invalid type" }));
   }
 
   try {
