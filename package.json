@@ -2,8 +2,7 @@
   "name": "api2hub",
   "version": "1.0.0",
   "scripts": {
-  "start": "node api/server.js"
-  }
+    "start": "node api/server.js"
   },
   "dependencies": {
     "express": "^4.19.2"
